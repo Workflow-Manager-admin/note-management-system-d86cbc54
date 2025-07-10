@@ -1,0 +1,46 @@
+.main-app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-app-content {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+  background: var(--color-bg);
+}
+
+/* Sidebar is shown on screens >= 800px */
+@media (max-width: 799px) {
+  .main-app-content {
+    flex-direction: column;
+  }
+  .sidebar {
+    display: none;
+  }
+}
+
+@media (min-width: 800px) {
+  .main-app-center {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+  }
+}
+.main-app-center {
+  flex: 1 1 0;
+  padding: 2rem max(3vw, 1rem);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 2rem;
+}
+
+@media (max-width: 799px) {
+  .main-app-center {
+    padding: 1rem 0.5rem;
+    gap: 1.2rem;
+  }
+}
